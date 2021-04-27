@@ -1,0 +1,37 @@
+[
+    {
+        "user_id": 2,
+        "post_id": 1,
+        "comment": "Please help me with CSS!"
+    },
+    {
+        "user_id": 3,
+        "post_id": 1,
+        "comment": "Can you please give me your contact info?"
+    },
+    {
+        "user_id": 2,
+        "post_id": 2,
+        "comment": "You have issues..."
+    },
+    {
+        "user_id": 3,
+        "post_id": 2,
+        "comment": "This is so relatable!"
+    },
+    {
+        "user_id": 1,
+        "post_id": 3,
+        "comment": "This is so me, except that I'm not playing games, I'm surfing my social medias..."
+    },
+    {
+        "user_id": 2,
+        "post_id": 4,
+        "comment": "Put the wet phone inside a zip-lock with rice(not cooked) on it. So the dry rice will absorb the moisture..."
+    },
+    {
+        "user_id": 3,
+        "post_id": 4,
+        "comment": "Ew gross, just throw it away and buy a new one!"
+    }
+]

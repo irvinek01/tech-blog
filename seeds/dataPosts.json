@@ -1,0 +1,22 @@
+[
+    {
+        "title": "I love coding!",
+        "content": "HTML, CSS, Javascript and Node.js.",
+        "user_id": 1
+    },
+    {
+        "title": "I hate people!",
+        "content": "I'm shy and I don't talk too much.",
+        "user_id": 1
+    },
+    {
+        "title": "I'm playing games all day long...",
+        "content": "Until night and asap I saw the window lighting because of the morning sky, I felt guilty and will go to sleep.",
+        "user_id": 2
+    },
+    {
+        "title": "My phone doesn't work, HELP!",
+        "content": "I dropped my phone on toilet, freaking clumsy hands!",
+        "user_id": 3
+    }
+]
