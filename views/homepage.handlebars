@@ -1,1 +1,13 @@
-<h1>HOME</h1>
+{{#each postList as |post| }}
+<div class="row mb-4">
+    <div class="col-md-5">
+        <h2>{{post.title}}</h2>
+        <p>Created by <b>{{post.user.name}}</b> on <i>{{post.post_when}}</i></p>
+    </div>
+    <div class="col-md-7">
+        <p>
+            {{post.content}}
+        </p>
+    </div>
+</div>
+{{/each}}

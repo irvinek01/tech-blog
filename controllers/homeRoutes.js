@@ -13,33 +13,7 @@ router.get("/", async (req, res) => {
       ],
     });
     const postList = postData.map((post) => post.get({ plain: true }));
-    // res.render("homepage", { postList, logged_in: req.session.logged_in });
-    res.status(200).json(postList);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get("/post/:id", async (req, res) => {
-  try {
-    const userPost = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-        {
-          model: Comment,
-        },
-      ],
-    });
-    const serial = userPost.get({ plain: true });
-    serial.comments.forEach(async (comment) => {
-      const user = await User.findByPk(comment.user_id);
-      comment.user_name = user.name;
-    });
-    console.log(serial);
-    // res.render("post", { serial, logged_in: req.session.logged_in });
+    res.render("homepage", { postList });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -52,8 +26,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       include: [{ model: Post }],
     });
     const user = userData.get({ plain: true });
-    console.log(user);
-    // res.render("dashboard", { user, logged_in: req.session.logged_in });
+    res.render("dashboard", { user, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
