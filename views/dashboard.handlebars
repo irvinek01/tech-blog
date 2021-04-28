@@ -1,1 +1,42 @@
-<h1>DASHBOARD</h1>
+<h1 class="p-2 bg-primary text-white">Hello! Welcome, {{user.name}}</h1>
+<p><i>Add Post</i></p>
+<div class="row mb-4">
+    <div class="col-md-5">
+        <form class="form addpost-form">
+            <div class="form-group">
+                <label for="post-title">Post Title:</label>
+                <input class="form-input" type="text" id="post-title" />
+            </div>
+            <div class="form-group">
+                <label for="post-content">Post Content:</label>
+                <input class="form-input" type="text" id="post-content" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Add Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+<p><i>Your Post(s)</i></p>
+{{#if user.posts.length}}
+{{#each user.posts as |post|}}
+<div class="row mb-4">
+    <div class="col-md-5">
+        <h2>{{post.title}}</h2>
+        <p>Created by <b>YOU</b> on <i>{{post.post_when}}</i></p>
+    </div>
+    <div class="col-md-7">
+        <p>
+            {{post.content}}
+        </p>
+    </div>
+</div>
+{{/each}}
+{{else}}
+<div class="row">
+    <div class="col-12">
+        <h4>You didn't have any posts to show.</h4>
+    </div>
+</div>
+{{/if}}
+<script src="./js/addPost.js"></script>

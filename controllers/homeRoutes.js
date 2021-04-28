@@ -26,6 +26,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       include: [{ model: Post }],
     });
     const user = userData.get({ plain: true });
+    console.log(user);
     res.render("dashboard", { user, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);

@@ -14,29 +14,4 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-router.get("/posts/:id", async (req, res) => {
-  try {
-    const userPost = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-        {
-          model: Comment,
-        },
-      ],
-    });
-    const serial = userPost.get({ plain: true });
-    serial.comments.forEach(async (comment) => {
-      const user = await User.findByPk(comment.user_id);
-      comment.user_name = user.name;
-    });
-    console.log(serial);
-    res.render("dashboard", { serial, logged_in: req.session.logged_in });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 module.exports = router;
