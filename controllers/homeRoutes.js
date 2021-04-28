@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
       ],
     });
     const postList = postData.map((post) => post.get({ plain: true }));
-    // res.render("home", { postList, logged_in: req.session.logged_in });
+    // res.render("homepage", { postList, logged_in: req.session.logged_in });
     res.status(200).json(postList);
   } catch (err) {
     res.status(500).json(err);
